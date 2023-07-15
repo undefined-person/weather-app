@@ -1,0 +1,22 @@
+<div class="zip__header">
+  <input class="zip__input" type="text" [(ngModel)]="newZipCode" placeholder="Enter a ZIP code">
+  <button class="zip__btn" (click)="addZipCode(newZipCode)">Add ZIP Code</button>
+</div>
+
+<table class="zip__content">
+  <tr>
+    <th>ZIP</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Temperature</th>
+  </tr>
+  <tr *ngFor="let weather of weatherData" (click)="redirectToForecast(weather.zipCode)">
+    <td>{{ weather.zipCode }}</td>
+    <td>{{ weather.country }}</td>
+    <td>{{ weather.city }}</td>
+    <td class="weather">
+      <img [src]="'https://openweathermap.org/img/wn/' + weather.iconCode + '@2x.png'" [alt]="weather.iconCode">
+     <span>{{ weather.temp }}°F</span>
+    </td>
+  </tr>
+</table>

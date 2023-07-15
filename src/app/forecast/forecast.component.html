@@ -1,0 +1,14 @@
+<div class="forecast">
+  <div *ngFor="let day of forecast | slice:0:5" class="forecast__container">
+   <div class="forecast__day">{{ getDayOfWeek(day.date) }}</div>
+    <div class="forecast__wrapper">
+      <div *ngFor="let item of day.items" class="forecast__item">
+        <div class="forecast__time">{{ getTimeOfDay(item.dt_txt) }}</div>
+        <div class="forecast__temp">
+          <img src="http://openweathermap.org/img/w/{{ item.weather[0].icon }}.png" alt="{{ item.weather[0].description }}">
+          {{ item.main.temp }}°F
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

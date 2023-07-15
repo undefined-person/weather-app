@@ -10,6 +10,7 @@
           "style": "scss"
         }
       },
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -30,8 +31,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/shared/styles/index.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/shared/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -56,7 +62,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -93,12 +105,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/shared/styles/index.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1e41262d-bb27-4034-b1e8-24fb931573fc"
   }
 }

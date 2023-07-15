@@ -1,0 +1,16 @@
+@import "../../shared/styles/vars";
+
+.header {
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  color: $light-color;
+  height: 60px;
+
+  &__logo {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
